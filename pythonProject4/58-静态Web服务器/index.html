@@ -1,0 +1,54 @@
+<!--搭建Python自带的静态Web服务器-->
+<!--
+在终端输入：
+1.切换工作路径：cd D:\PycharmProjects\Study\pythonProject4\58-静态Web服务器
+2.启动服务器：python -m http.server 9000
+3.在浏览器打开网址：127.0.0.1:9000
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无聊的网站</title>
+    <style>
+        #shao{
+            color:coral
+        }
+        .dimg{
+            width:1000px;
+            height:360px;
+            border:1px solid coral;
+            background:coral
+        }
+    </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        console.log('终端打印')
+        $(function(){
+            // 定义点击事件触发代码
+            function clickEve(){
+                alert('点击~')
+            }
+            // 定义失去焦点事件触发代码
+            function blurEve(){
+                alert('失去焦点~')
+            }
+            // 监听指定标签点击事件
+            $('input[type=button]').click(clickEve)
+            $('input[type=text]').blur(blurEve)
+
+            var b = '{"name":"Python"}'
+            var b_obj = JSON.parse(b)
+            alert(b_obj.name)
+        })
+    </script>
+</head>
+<body>
+<div class="dimg">
+    <img src="3_阿求.png" style="height:360px; width=640px; align=center">
+</div>
+<input id="shao" type="button" value="少女祈祷中...">
+<input type="text" value="少女祈祷中...">
+
+</body>
+</html>
